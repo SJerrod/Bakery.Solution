@@ -25,6 +25,7 @@ namespace BakedGoods.Models
 
       if(loafs == 0)
       {
+        // Loops Twice cant break or return tried switch case and re-working while loop
         Console.WriteLine("You currently have no bread for your order.");
       }
       else
