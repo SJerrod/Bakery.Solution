@@ -52,7 +52,7 @@ namespace BakedGoods.TestTools
     [TestMethod]
     public void PastryPrice_CalculatesPastryCost_Float()
     {
-      string pastryCountString = "6";
+      string pastryCountString = "7";
       float pastryCount = int.Parse(pastryCountString);
       Pastry newOrder = new Pastry(pastryCount, 0);
       float pastryPrice = newOrder.GetPastryPrice();
