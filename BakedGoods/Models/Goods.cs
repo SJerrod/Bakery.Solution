@@ -1,3 +1,5 @@
+using System;
+
 namespace BakedGoods.Models
 {
   public class Bread
@@ -21,22 +23,24 @@ namespace BakedGoods.Models
       float loafs = _breadCount;
       _breadPrice = 0;
 
-      while(loafs > 0)
+      if(loafs == 0)
       {
-        if(loafs >= 3)
+        Console.WriteLine("You currently have no bread for your order.");
+      }
+      else
+      {
+        while(loafs > 0)
         {
-          loafs -= 3;
-          _breadPrice += 10;
-        }
-        else if (loafs == 2)
-        {
-          loafs -= 2;
-          _breadPrice += 10;
-        }
-        else if (loafs == 1)
-        {
-          loafs -= 1;
-          _breadPrice += 5;
+          if(loafs >= 3)
+          {
+            loafs -= 3;
+            _breadPrice += 10;
+          }
+          else if (loafs < 3)
+          {
+            loafs -= 1;
+            _breadPrice += 5;
+          }
         }
       }
       return _breadPrice;
@@ -57,6 +61,34 @@ namespace BakedGoods.Models
     public float GetPastryCount()
     {
       return _pastryCount;
+    }
+
+    public float GetPastryPrice()
+    {
+      float treats = _pastryCount;
+      _pastryPrice = 0;
+
+      if (treats == 0)
+      {
+        Console.WriteLine("You Currently have no Pastries for your order.");
+      }
+      else
+      {
+        while(treats > 0)
+        {
+          if (treats >= 3)
+          {
+            treats -= 3;
+            _pastryPrice += 5;
+          }
+          else if (treats < 3)
+          {
+            treats -= 1;
+            _pastryPrice += 2;
+          }
+        }
+      }
+      return _pastryPrice;
     }
   }
 }
