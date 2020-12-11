@@ -53,5 +53,10 @@ namespace BakedGoods.Models
       _pastryCount = pastryCount;
       _pastryPrice = pastryPrice;
     }
+
+    public float GetPastryCount()
+    {
+      return _pastryCount;
+    }
   }
 }

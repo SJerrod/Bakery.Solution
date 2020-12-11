@@ -39,5 +39,24 @@ namespace BakedGoods.TestTools
       Pastry newOrder = new Pastry(6,10);
       Assert.AreEqual(typeof(Pastry), newOrder.GetType());
     }
+
+    [TestMethod]
+    public void PastryCount_AddsAmountOfPastryToCount_Float()
+    {
+      string pastryCountString = "6";
+      float pastryCount = int.Parse(pastryCountString);
+      Pastry newOrder = new Pastry(pastryCount,0);
+      Assert.AreEqual(5, newOrder.GetPastryCount());
+    }
+
+    // [TestMethod]
+    // public void PastryPrice_CalculatesPastryCost_Float()
+    // {
+    //   string pastryCountString = "6";
+    //   float pastryCount = int.Parse(pastryCountString);
+    //   Pastry newOrder = new Pastry(pastryCount, 0);
+    //   float pastryPrice = newOrder.GetPastryPrice();
+    //   Assert.AreEqual(, newOrder.GetPastryPrice());
+    // }
   }
 }
