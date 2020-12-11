@@ -17,10 +17,20 @@ namespace BakedGoods.TestTools
     [TestMethod]
     public void BreadCount_AddsAmountToBreadCount_Float()
     {
-      string breadString = "6";
-      float breadCount = int.Parse(breadString);
+      string breadCountString = "6";
+      float breadCount = int.Parse(breadCountString);
       Bread newOrder = new Bread(breadCount, 20);
       Assert.AreEqual(6, newOrder.GetBreadCount());
+    }
+
+    [TestMethod]
+    public void BreadPrice_CalculatesBreadCost_Float()
+    {
+      string breadCountString = "7";
+      float breadCount = int.Parse(breadCountString);
+      Bread newOrder = new Bread(breadCount, 0);
+      float breadPrice = newOrder.GetBreadPrice();
+      Assert.AreEqual(20, newOrder.GetBreadPrice());
     }
   }
 }

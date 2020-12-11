@@ -18,6 +18,27 @@ namespace BakedGoods.Models
 
     public float GetBreadPrice()
     {
+      float loafs = _breadCount;
+      _breadPrice = 0;
+
+      while(loafs > 0)
+      {
+        if(loafs >= 3)
+        {
+          loafs -= 3;
+          _breadPrice += 10;
+        }
+        else if (loafs == 2)
+        {
+          loafs -= 2;
+          _breadPrice += 10;
+        }
+        else if (loafs == 1)
+        {
+          loafs -= 1;
+          _breadPrice += 5;
+        }
+      }
       return _breadPrice;
     }
   }
