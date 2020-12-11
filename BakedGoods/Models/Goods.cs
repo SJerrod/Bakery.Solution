@@ -42,4 +42,16 @@ namespace BakedGoods.Models
       return _breadPrice;
     }
   }
+
+  public class Pastry
+  {
+    private float _pastryCount;
+    private float _pastryPrice;
+
+    public Pastry(float pastryCount, float pastryPrice)
+    {
+      _pastryCount = astryCount;
+      _pastryPrice = pastryPrice;
+    }
+  }
 }

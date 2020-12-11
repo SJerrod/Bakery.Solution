@@ -32,5 +32,12 @@ namespace BakedGoods.TestTools
       float breadPrice = newOrder.GetBreadPrice();
       Assert.AreEqual(25, newOrder.GetBreadPrice());
     }
+
+    [TestMethod]
+    public void PastryConstructor_CreatesPastry_Pastry()
+    {
+      Pastry newOrder = new Pastry(6,10);
+      Assert.AreEqual(typeof(Pastry), newOrder.GetType());
+    }
   }
 }
