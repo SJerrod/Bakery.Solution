@@ -17,7 +17,7 @@ namespace BakedGoods.TestTools
     [TestMethod]
     public void BreadCount_AddsAmountToBreadCount_Float()
     {
-      string breadString = "7";
+      string breadString = "6";
       float breadCount = int.Parse(breadString);
       Bread newOrder = new Bread(breadCount, 20);
       Assert.AreEqual(6, newOrder.GetBreadCount());
