@@ -50,7 +50,7 @@ namespace BakedGoods.Models
 
     public Pastry(float pastryCount, float pastryPrice)
     {
-      _pastryCount = astryCount;
+      _pastryCount = pastryCount;
       _pastryPrice = pastryPrice;
     }
   }
