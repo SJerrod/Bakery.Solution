@@ -46,7 +46,7 @@ namespace BakedGoods.TestTools
       string pastryCountString = "6";
       float pastryCount = int.Parse(pastryCountString);
       Pastry newOrder = new Pastry(pastryCount,0);
-      Assert.AreEqual(5, newOrder.GetPastryCount());
+      Assert.AreEqual(6, newOrder.GetPastryCount());
     }
 
     // [TestMethod]
