@@ -20,6 +20,8 @@
 - Using a prefered terminal use the command 'git clone paste-url-here' in which ever directory you wish.
 - Open the newly cloned repo with your text editor.
 - In the terminal run command 'dotnet restore BakedGoods.Tests'
+- In the terminal run command 'dotnet build BakedGoods'
+- In the terminal run command 'dotnet run --project BakedGoods'
 
 
 ## Specifications
