@@ -5,39 +5,65 @@ class Bakery
 {
   static void Main()
   {
-    // Greet
+    void Greet()
+    {
     Console.WriteLine("Welcome to 'Bready or Knot'");
     Console.WriteLine("Thanks for choosing your baked goods through us.");
     Console.WriteLine(":----------------------------------------------:");
-    // Order
-    Console.WriteLine("To place an order for Bread please enter 1");
-    Console.WriteLine("To place an order for Pastries please enter 2");
-    string newOrder = Console.ReadLine();
-    if(newOrder == "1")
-    {
-      Console.WriteLine("How many loafs would you like to add to the order?");
-      string breadCountString = Console.ReadLine();
-      float breadCount = int.Parse(breadCountString);
-      Bread breadOrder = new Bread(breadCount,0);
-      float breadPrice = breadOrder.GetBreadPrice();
-      string breadTotal = new String("$" + breadOrder.GetBreadPrice() + ".00");
-      Console.WriteLine(breadOrder.GetBreadCount() + " loafs comes to " + breadTotal);
     }
-    else if(newOrder == "2")
+    Greet();
+    float breadTotalCost = 0;
+    float pastryTotalCost = 0;
+    float breadAmount = 0;
+    float pastryAmount = 0;
+    void Order()
     {
-      Console.WriteLine("How many Pastries would you like to add to the order?");
-      string pastryCountString = Console.ReadLine();
-      float pastryCount = int.Parse(pastryCountString);
-      Pastry pastryOrder = new Pastry(pastryCount,0);
-      float pastryPrice = pastryOrder.GetPastryPrice();
-      string pastryTotal = new String("$" + pastryOrder.GetPastryPrice() + ".00");
-      Console.WriteLine(pastryOrder.GetPastryCount() + " pastries comes to " + pastryTotal);
+      Console.WriteLine("Enter 1 to add bread to order *Buy 2 Get 1 Free ($5.00 per loaf)*");
+      Console.WriteLine("Enter 2 to add pastry to order *1 for $2.00 or 3 for $5.00*");
+      Console.WriteLine("Enter 3 to display order total.");
+      string newOrder = Console.ReadLine();
+      if(newOrder == "1")
+      {
+        Console.WriteLine("How many loafs would you like to add to the order?");
+        string breadCountString = Console.ReadLine();
+        float breadCount = int.Parse(breadCountString);
+        Bread breadOrder = new Bread(breadCount,0);
+        float breadPrice = breadOrder.GetBreadPrice();
+        string orderTotal = new String("$" + breadPrice + ".00");
+        breadTotalCost += breadPrice;
+        breadAmount += breadCount;
+        Console.WriteLine(breadOrder.BreadCount + " loafs comes to " + orderTotal);
+        Order();
+      }
+      else if(newOrder == "2")
+      {
+        Console.WriteLine("How many Pastries would you like to add to the order?");
+        string pastryCountString = Console.ReadLine();
+        float pastryCount = int.Parse(pastryCountString);
+        Pastry pastryOrder = new Pastry(pastryCount,0);
+        float pastryPrice = pastryOrder.GetPastryPrice();
+        string orderTotal = new String("$" + pastryPrice + ".00");
+        pastryTotalCost += pastryPrice;
+        pastryAmount += pastryCount;
+        Console.WriteLine(pastryOrder.PastryCount + " pastries comes to " + orderTotal);
+        Order();
+      }
+      else if (newOrder == "3")
+      {
+        float concatTotal = breadTotalCost + pastryTotalCost;
+        string orderTotal = new String("$" + concatTotal + ".00");
+        Console.WriteLine("You have ordered " + breadAmount + " loafs of bread.");
+        Console.WriteLine("You have ordered " + pastryAmount + " pastries.");
+        Console.WriteLine("Todays total comes to " + orderTotal);
+      }
+      else
+      {
+        Console.WriteLine(":---------------------------------------------------------:");
+        Console.WriteLine("Sorry we currently dont have a product type for that Input.");
+        Console.WriteLine(":---------------------------------------------------------:");
+        Main();
+      }
     }
-    else
-    {
-      Console.WriteLine("We Currently dont have a product type for that Input.");
-      Console.WriteLine(":---------------------------------------------------:");
-      Main();
-    }
+    Order();
   }
 }

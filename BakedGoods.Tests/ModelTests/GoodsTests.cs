@@ -20,7 +20,7 @@ namespace BakedGoods.TestTools
       string breadCountString = "6";
       float breadCount = int.Parse(breadCountString);
       Bread newOrder = new Bread(breadCount, 20);
-      Assert.AreEqual(6, newOrder.GetBreadCount());
+      Assert.AreEqual(6, newOrder.BreadCount);
     }
 
     [TestMethod]
@@ -46,7 +46,7 @@ namespace BakedGoods.TestTools
       string pastryCountString = "6";
       float pastryCount = int.Parse(pastryCountString);
       Pastry newOrder = new Pastry(pastryCount,0);
-      Assert.AreEqual(6, newOrder.GetPastryCount());
+      Assert.AreEqual(6, newOrder.PastryCount);
     }
 
     [TestMethod]

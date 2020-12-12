@@ -1,26 +1,22 @@
 using System;
+using BakedGoods;
 
 namespace BakedGoods.Models
 {
   public class Bread
   {
-    private float _breadCount;
+    public float BreadCount { get; set;}
     private float _breadPrice;
 
     public Bread(float breadCount, float breadPrice)
     {
-      _breadCount = breadCount;
+      BreadCount = breadCount;
       _breadPrice = breadPrice;
-    }
-
-    public float GetBreadCount()
-    {
-      return _breadCount;
     }
 
     public float GetBreadPrice()
     {
-      float loafs = _breadCount;
+      float loafs = BreadCount;
       _breadPrice = 0;
 
       if(loafs == 0)
@@ -50,23 +46,18 @@ namespace BakedGoods.Models
 
   public class Pastry
   {
-    private float _pastryCount;
+    public float PastryCount { get; set; }
     private float _pastryPrice;
 
     public Pastry(float pastryCount, float pastryPrice)
     {
-      _pastryCount = pastryCount;
+      PastryCount = pastryCount;
       _pastryPrice = pastryPrice;
-    }
-
-    public float GetPastryCount()
-    {
-      return _pastryCount;
     }
 
     public float GetPastryPrice()
     {
-      float treats = _pastryCount;
+      float treats = PastryCount;
       _pastryPrice = 0;
 
       if (treats == 0)
@@ -92,4 +83,41 @@ namespace BakedGoods.Models
       return _pastryPrice;
     }
   }
+
+  // public class Order
+  // {
+  //   void NewOrder()
+  //   {
+  //     Console.WriteLine("To place an order for Bread please enter 1");
+  //     Console.WriteLine("To place an order for Pastries please enter 2");
+  //     string newOrder = Console.ReadLine();
+  //     if(newOrder == "1")
+  //     {
+  //       Console.WriteLine("How many loafs would you like to add to the order?");
+  //       string breadCountString = Console.ReadLine();
+  //       float breadCount = int.Parse(breadCountString);
+  //       Bread breadOrder = new Bread(breadCount,0);
+  //       float breadPrice = breadOrder.GetBreadPrice();
+  //       string breadTotal = new String("$" + breadOrder.GetBreadPrice() + ".00");
+  //       Console.WriteLine(breadOrder.GetBreadCount() + " loafs comes to " + breadTotal);
+  //     }
+  //     else if(newOrder == "2")
+  //     {
+  //       Console.WriteLine("How many Pastries would you like to add to the order?");
+  //       string pastryCountString = Console.ReadLine();
+  //       float pastryCount = int.Parse(pastryCountString);
+  //       Pastry pastryOrder = new Pastry(pastryCount,0);
+  //       float pastryPrice = pastryOrder.GetPastryPrice();
+  //       string pastryTotal = new String("$" + pastryOrder.GetPastryPrice() + ".00");
+  //       Console.WriteLine(pastryOrder.GetPastryCount() + " pastries comes to " + pastryTotal);
+  //     }
+  //     else
+  //     {
+  //       Console.WriteLine(":---------------------------------------------------------:");
+  //       Console.WriteLine("Sorry we currently dont have a product type for that Input.");
+  //       Console.WriteLine(":---------------------------------------------------------:");
+  //       NewOrder();
+  //     }
+  //   }
+  // }
 }
