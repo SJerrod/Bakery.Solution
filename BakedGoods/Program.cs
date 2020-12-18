@@ -26,6 +26,7 @@ namespace BakedGoods.Models
         if(newOrder == "1")
         {
           Console.WriteLine("How many loafs would you like to add to the order?");
+          Console.WriteLine("Todays Deal: Buy 2 loafs get your 3rd Free");
           string breadCountString = Console.ReadLine();
           float breadCount = int.Parse(breadCountString);
           Bread breadOrder = new Bread(breadCount,0);
@@ -39,6 +40,7 @@ namespace BakedGoods.Models
         else if(newOrder == "2")
         {
           Console.WriteLine("How many Pastries would you like to add to the order?");
+          Console.WriteLine("Todays Deal: 3 for $5.00 ");
           string pastryCountString = Console.ReadLine();
           float pastryCount = int.Parse(pastryCountString);
           Pastry pastryOrder = new Pastry(pastryCount,0);
@@ -51,10 +53,24 @@ namespace BakedGoods.Models
         }
         else if (newOrder == "3")
         {
+          float breadSaving = 0;
+          float pastrySaving = 0;
           float concatTotal = breadTotalCost + pastryTotalCost;
           string orderTotal = new String("$" + concatTotal + ".00");
           Console.WriteLine("You have ordered " + breadAmount + " loafs of bread.");
+          while (breadAmount >=3)
+          {
+            breadAmount -= 3;
+            breadSaving += 5;
+          }
+          Console.WriteLine("You Saved $" + breadSaving + ".00 off your bread order today.");
           Console.WriteLine("You have ordered " + pastryAmount + " pastries.");
+          while (pastryAmount >=3)
+          {
+            pastryAmount -= 3;
+            pastrySaving += 1;
+          }
+          Console.WriteLine("You Saved $" + pastrySaving + ".00 off your pastry order today.");
           Console.WriteLine("Todays total comes to " + orderTotal);
         }
         else

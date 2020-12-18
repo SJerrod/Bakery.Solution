@@ -18,24 +18,17 @@ namespace BakedGoods.Models
       float treats = PastryCount;
       _pastryPrice = 0;
 
-      if (treats == 0)
+      while(treats > 0)
       {
-        Console.WriteLine("You Currently have no Pastries for your order.");
-      }
-      else
-      {
-        while(treats > 0)
+        if (treats >= 3)
         {
-          if (treats >= 3)
-          {
-            treats -= 3;
-            _pastryPrice += 5;
-          }
-          else if (treats < 3)
-          {
-            treats -= 1;
-            _pastryPrice += 2;
-          }
+          treats -= 3;
+          _pastryPrice += 5;
+        }
+        else if (treats < 3)
+        {
+          treats -= 1;
+          _pastryPrice += 2;
         }
       }
       return _pastryPrice;
