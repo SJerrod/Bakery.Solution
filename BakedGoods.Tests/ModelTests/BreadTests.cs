@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BakedGoods.Models;
 
-namespace BakedGoods.TestTools
+namespace BakedGoods.Tests
 {
   [TestClass]
   public class BreadTests
