@@ -40,7 +40,7 @@ namespace BakedGoods.TestTools
       float breadCount = int.Parse(breadCountString);
       Bread newOrder = new Bread(breadCount, 0);
       float breadPrice = newOrder.GetBreadPrice();
-      Assert.AreEqual(15, newOrder.GetBreadPrice());
+      Assert.AreEqual(10, newOrder.GetBreadPrice());
     }
 
     // [TestMethod]
